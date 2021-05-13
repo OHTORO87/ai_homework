@@ -18,7 +18,7 @@ for i in aws.rows:
 exf.save('c:\\dd\\outitx.xlsx')
 exf.close()
 
-'''
+'''SQLLITE
 SQLite version 3.35.5 2021-04-19 18:32:05
 Enter ".help" for usage hints.
 Connected to a transient in-memory database.
