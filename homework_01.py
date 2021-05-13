@@ -38,6 +38,28 @@ mount  alt
 설악산    1900
 지로산    2915
 덕유산    1300
+sqlite> select alt, mount from mt;
+alt   mount
+----  -----
+1900  설악산
+2915  지로산
+1300  덕유산
+sqlite> select mount as'산이름' alt as'해발' from mt;
+Error: near "alt": syntax error
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1900
+지로산  2915
+덕유산  1300
+sqlite> insert into mt values('한라산',1950);
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1900
+지로산  2915
+덕유산  1300
+한라산  1950
 sqlite>
 
 '''
