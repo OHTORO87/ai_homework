@@ -62,20 +62,92 @@ mysql> create table aitab(
     -> name char(20),
     -> kor tinyint,
     -> eng tinyint,
-    -> mat tinyint);
-Query OK, 0 rows affected (0.03 sec)
+    -> mat tinyint,
+    -> total int);
+Query OK, 0 rows affected (0.02 sec)
 
-mysql> show tables;
+mysql>  show tables;
 +----------------+
 | Tables_in_aidb |
 +----------------+
 | aitab          |
 +----------------+
-1 row in set (0.00 sec)
+1 row in set (0.01 sec)
 
+mysql> desc aitab;
++-------+----------+------+-----+---------+----------------+
+| Field | Type     | Null | Key | Default | Extra          |
++-------+----------+------+-----+---------+----------------+
+| id    | int      | NO   | PRI | NULL    | auto_increment |
+| name  | char(20) | YES  |     | NULL    |                |
+| kor   | tinyint  | YES  |     | NULL    |                |
+| eng   | tinyint  | YES  |     | NULL    |                |
+| mat   | tinyint  | YES  |     | NULL    |                |
+| total | int      | YES  |     | NULL    |                |
++-------+----------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
 
 ###############################    
 테이블에 insert후 select하기
 총점 역순으로 출력
 (결과화면 캡쳐해서 올리기)
 ###############################    
+##### 메모장에서 복사해서 insert
+
+insert into aitab(name, kor, eng, mat, total) values('이순신',85,87,90,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('강감찬',75,80,90,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('한석봉',99,98,99,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('황진이',35,45,20,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('안중근',90,85,90,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('박문수',95,98,96,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('임꺽정',15,35,45,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('김정호',90,95,80,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('정몽주',90,90,95,kor+eng+mat);
+insert into aitab(name, kor, eng, mat, total) values('양주종',50,45,60,kor+eng+mat);
+
+##### select 로 출력
+
+mysql> select * from aitab;
++----+--------+------+------+------+-------+
+| id | name   | kor  | eng  | mat  | total |
++----+--------+------+------+------+-------+
+|  1 | 이순신 |   85 |   87 |   90 |   262 |
+|  2 | 강감찬 |   75 |   80 |   90 |   245 |
+|  3 | 한석봉 |   99 |   98 |   99 |   296 |
+|  4 | 황진이 |   35 |   45 |   20 |   100 |
+|  5 | 안중근 |   90 |   85 |   90 |   265 |
+|  6 | 박문수 |   95 |   98 |   96 |   289 |
+|  7 | 임꺽정 |   15 |   35 |   45 |    95 |
+|  8 | 김정호 |   90 |   95 |   80 |   265 |
+|  9 | 정몽주 |   90 |   90 |   95 |   275 |
+| 10 | 양주종 |   50 |   45 |   60 |   155 |
++----+--------+------+------+------+-------+
+10 rows in set (0.00 sec)
+
+
+
+#### 총점을 구하고 역순으로 출력하기
+
+# 데이터 입력시 총점을 아예 입력해버림
+
+# 역순 출력
+
+mysql> select * from aitab order by total desc;
++----+--------+------+------+------+-------+
+| id | name   | kor  | eng  | mat  | total |
++----+--------+------+------+------+-------+
+|  3 | 한석봉 |   99 |   98 |   99 |   296 |
+|  6 | 박문수 |   95 |   98 |   96 |   289 |
+|  9 | 정몽주 |   90 |   90 |   95 |   275 |
+|  5 | 안중근 |   90 |   85 |   90 |   265 |
+|  8 | 김정호 |   90 |   95 |   80 |   265 |
+|  1 | 이순신 |   85 |   87 |   90 |   262 |
+|  2 | 강감찬 |   75 |   80 |   90 |   245 |
+| 10 | 양주종 |   50 |   45 |   60 |   155 |
+|  4 | 황진이 |   35 |   45 |   20 |   100 |
+|  7 | 임꺽정 |   15 |   35 |   45 |    95 |
++----+--------+------+------+------+-------+
+10 rows in set (0.00 sec)
+
+
+
