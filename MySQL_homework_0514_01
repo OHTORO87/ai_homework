@@ -1,0 +1,62 @@
+
+
+***** 1번 문제 *****
+
+
+
+Microsoft Windows [Version 10.0.19042.928]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\CPB06GameN>mysql
+ERROR 1045 (28000): Access denied for user 'ODBC'@'localhost' (using password: NO)
+
+C:\Users\CPB06GameN>mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 54
+Server version: 8.0.25 MySQL Community Server - GPL
+
+
+== 새로운 유저 등록 ====
+
+mysql> create user mymy@'%' identified by '7777';
+Query OK, 0 rows affected (0.02 sec)
+
+
+== 등록 유저에게 DB 권한 부여 ==
+
+mysql> grant all privileges on mydb.* to mymy@'%' with grant option;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+
+==유저 등록된것 확인====
+
+mysql> select user from user;
++------------------+
+| user             |
++------------------+
+| ace              |
+| mymy             |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+6 rows in set (0.00 sec)
+
+
+***** 2번 문제 *****
+
+=== 새로운 아이디로 접속 성공 ===
+
+C:\Users\CPB06GameN>mysql -u mymy -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 55
+Server version: 8.0.25 MySQL Community Server - GPL
+
+
+
+
