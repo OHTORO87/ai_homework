@@ -65,5 +65,43 @@ Server version: 8.0.25 MySQL Community Server - GPL
 mysql> create table oecd(nation char(30), population int, popratio int);
 Query OK, 0 rows affected (0.04 sec)
 
+===== 레코드 값 입력 ======
+
+mysql> insert into oecd values('USA', '318816000','4.39');
+Query OK, 1 row affected (0.01 sec)
+
+
+====  모두 조회 ====
+
+mysql> show tables;
++----------------+
+| Tables_in_mydb |
++----------------+
+| man            |
+| movie          |
+| oecd           |
++----------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from oecd;
++--------+------------+----------+
+| nation | population | popratio |
++--------+------------+----------+
+| USA    |  318816000 |        4 |
++--------+------------+----------+
+1 row in set (0.00 sec)
+
+
+====  usa 삭제 ====
+
+
+
+====  모두 삭제 ====
+
+
+
+====  테이블 삭제 ====
+
+
 
 
