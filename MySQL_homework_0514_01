@@ -10,6 +10,9 @@ Microsoft Windows [Version 10.0.19042.928]
 C:\Users\CPB06GameN>mysql
 ERROR 1045 (28000): Access denied for user 'ODBC'@'localhost' (using password: NO)
 
+=== root id로 접속 ===
+
+
 C:\Users\CPB06GameN>mysql -u root -p
 Enter password: ****
 Welcome to the MySQL monitor.  Commands end with ; or \g.
