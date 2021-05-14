@@ -152,6 +152,7 @@ mysql> select * from aitab order by total desc;
 
 
 ###########정답##########
+김보람 학우님 정답인용
 mysql> select name, (kor+eng+mat) as '총점' from aitab order by (kor+eng+mat) desc;
 +--------+------+
 | name   | 총점 |
