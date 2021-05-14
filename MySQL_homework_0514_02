@@ -1,0 +1,54 @@
+#####################
+위 참고해서 계정을 생성하시오.
+계정명 : ai, passwd : aiai
+사용DB : aidb
+#####################
+mysql> create user ai@'%' identified by 'aiai';
+Query OK, 0 rows affected (0.03 sec)
+
+
+
+#####################
+데이터베이스 만들기
+#####################
+mysql> create database aidb;
+Query OK, 1 row affected (0.01 sec)
+
+
+
+#####################
+ai에게 aidb의 권한 주기
+#####################
+mysql> grant all privileges on aidb.* to ai@'%' with grant option;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+#####################
+테이블 생성 : aitab 
+#####################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####################
+#####################
+
+#####################
+#####################
