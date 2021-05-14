@@ -26,6 +26,11 @@ mysql> flush privileges;
 Query OK, 0 rows affected (0.01 sec)
 
 
+#####################
+새로운 connection 만들기
+#####################
+(workbench에 새로운 account만들기)
+
 
 #####################
 테이블 생성 : aitab 
@@ -33,6 +38,23 @@ Query OK, 0 rows affected (0.01 sec)
 
 
 
+
+select  user();
+use aidb;
+show tables;
+
+create table aitab (
+	id int auto_increment primary key,
+	name varchar(20),
+    kor tinyint,
+    eng tinyint,
+    mat tinyint);
+    
+테이블에 insert후 select하기
+총점 역순으로 출력 
+
+결과 화면 캡쳐해서 올려주세요.
+[출처] AII - 9일차 (양주종의 코딩스쿨 ▶ C언어 ·파이썬 ·리눅스 ·정보처리기사) | 작성자 양주종
 
 
 
