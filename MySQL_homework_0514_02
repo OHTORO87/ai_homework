@@ -30,47 +30,52 @@ Query OK, 0 rows affected (0.01 sec)
 새로운 connection 만들기
 #####################
 (workbench에 새로운 account만들기)
-
+connection id : ai
+pw : aiai
+생성완료
 
 #####################
 테이블 생성 : aitab 
 #####################
 
+#### ai로 다시 접속
+C:\Users\User>cd c:\\dd
+
+c:\dd>mysql -u ai -p
+Enter password: ****
+
+#### database 확인
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aidb               |
+| information_schema |
++--------------------+
+2 rows in set (0.00 sec)
+
+### 테이블 생성 및 확인
+mysql> use aidb;
+Database changed
+mysql> create table aitab(
+    -> id int auto_increment primary key,
+    -> name char(20),
+    -> kor tinyint,
+    -> eng tinyint,
+    -> mat tinyint);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_aidb |
++----------------+
+| aitab          |
++----------------+
+1 row in set (0.00 sec)
 
 
-
-select  user();
-use aidb;
-show tables;
-
-create table aitab (
-	id int auto_increment primary key,
-	name varchar(20),
-    kor tinyint,
-    eng tinyint,
-    mat tinyint);
-    
+###############################    
 테이블에 insert후 select하기
-총점 역순으로 출력 
-
-결과 화면 캡쳐해서 올려주세요.
-[출처] AII - 9일차 (양주종의 코딩스쿨 ▶ C언어 ·파이썬 ·리눅스 ·정보처리기사) | 작성자 양주종
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#####################
-#####################
-
-#####################
-#####################
+총점 역순으로 출력
+(결과화면 캡쳐해서 올리기)
+###############################    
