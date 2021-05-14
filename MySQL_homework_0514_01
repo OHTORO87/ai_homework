@@ -60,6 +60,10 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 55
 Server version: 8.0.25 MySQL Community Server - GPL
 
+==== 새로운 테이블 및 필드명 생성 ====
+
+mysql> create table oecd(nation char(30), population int, popratio int);
+Query OK, 0 rows affected (0.04 sec)
 
 
 
